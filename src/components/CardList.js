@@ -14,7 +14,7 @@ const CardList = () => {
 
     const getData = async () => {
 
-        const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=10")
+        const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=898")
         const newArr = res.data.results.map((item,index) => (
             res.data.results[index].name.toUpperCase()
         ))
