@@ -5,7 +5,10 @@ import './styles/globals.css'
 const App = () => {
 
     return (
-        <CardList />
+        <div>
+            <CardList />
+        </div>
+        
     )
 }
 
