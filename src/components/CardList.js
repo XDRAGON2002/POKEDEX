@@ -26,11 +26,16 @@ const CardList = () => {
     },[])
     
     return (
-        <div className="flex flex-col items-center justify-center">
-            <h1 className="text-5xl font-mono p-5 font-bold text-gray-700">
+        <div className="flex flex-col items-center bg-gradient-to-r from-purple-300 to-pink-200 h-full min-h-screen">
+            <h1 className="text-5xl font-mono p-5 font-extrabol z-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">
                 POKEDEX
             </h1>
-            <input className="bg-gray-200 font-thin rounded-md mb-5 w-[20rem] h-8 px-4 hover:bg-gray-300 transition-all" type = "search" onChange = {handleSearch} value = {search} placeholder="Search..."></input>
+            
+            <div className="relative flex flex-row justify-start items-center mb-5">
+                <input className="bg-gradient-to-r from-purple-50 to-pink-50 font-thin rounded-md w-[20rem] h-8 px-4 hover:from-purple-100 hover:to-pink-100" type = "search" onChange = {handleSearch} value = {search} placeholder="Search..." />
+
+                <img className="absolute right-3 w-5 cursor-pointer hover:scale-[120%] transition-all" src="./searchicon.svg"/>
+            </div>
 
             <div className="flex flex-wrap flex-row w-[90vw] items-center justify-center">
             {arr.map((item,index) => {
