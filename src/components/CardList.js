@@ -1,6 +1,7 @@
 import React,{ useState,useEffect } from "react"
 import axios from "axios"
 import Card from "./Card"
+import style from "../styles/card.module.css"
 
 const CardList = () => {
 
@@ -25,11 +26,12 @@ const CardList = () => {
     },[])
     
     return (
-        <div>
+        <div className={style.container}>
             <h1>
                 POKEDEX
             </h1>
             <input type = "search" onChange = {handleSearch} value = {search}></input>
+            <div className={style.card_list}>
             {arr.map((item,index) => {
                 return (
                     <div>
@@ -38,6 +40,7 @@ const CardList = () => {
                     </div>
                 )
             })}
+            </div>
         </div>
     )
 }
