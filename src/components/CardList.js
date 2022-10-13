@@ -21,8 +21,8 @@ const CardList = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-r from-purple-300 to-pink-200 h-full min-h-screen">
-      <h1 className="text-5xl font-mono p-5 font-extrabol z-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">POKEDEX</h1>
+    <div className="flex flex-col items-center bg-gradient-to-r from-red-500 to-yellow-300 h-full min-h-screen">
+      <h1 className="text-5xl font-mono p-5 font-extrabol z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">POKEDEX</h1>
 
       <div className="relative flex flex-row justify-start items-center mb-5">
         <input className="bg-gradient-to-r from-purple-50 to-pink-50 font-thin rounded-md w-[20rem] h-8 pr-4 pl-8
