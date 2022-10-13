@@ -1,6 +1,7 @@
 import React,{ useState,useEffect } from "react"
 import axios from "axios"
 import Card from "./Card"
+import style from "../styles/card.module.css"
 
 const CardList = () => {
 
@@ -25,7 +26,7 @@ const CardList = () => {
     },[])
     
     return (
-        <div>
+        <div className={style.container}>
             <h1>
                 POKEDEX
             </h1>
