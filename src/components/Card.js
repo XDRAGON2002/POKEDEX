@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../styles/card.module.css'
+import style from '../styles/globals.css'
 const Card = (props) => {
   return (
     <div

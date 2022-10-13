@@ -25,9 +25,10 @@ const CardList = () => {
       <h1 className="text-5xl font-mono p-5 font-extrabol z-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">POKEDEX</h1>
 
       <div className="relative flex flex-row justify-start items-center mb-5">
-        <input className="bg-gradient-to-r from-purple-50 to-pink-50 font-thin rounded-md w-[20rem] h-8 px-4 hover:from-purple-100 hover:to-pink-100" type="search" onChange={handleSearch} value={search} placeholder="Search..." />
+        <input className="bg-gradient-to-r from-purple-50 to-pink-50 font-thin rounded-md w-[20rem] h-8 pr-4 pl-8
+        hover:from-purple-100 hover:to-pink-100" type="search" onChange={handleSearch} value={search} placeholder="Search..." />
 
-        <img className="absolute right-3 w-5 cursor-pointer hover:scale-[120%] transition-all" src="./searchicon.svg" alt="pokemon" />
+        <img className="absolute left-2 w-5 cursor-pointer hover:scale-[120%] transition-all" src="./searchicon.svg" alt="pokemon" />
       </div>
 
       <div className="flex flex-wrap flex-row w-[90vw] items-center justify-center">
