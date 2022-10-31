@@ -37,6 +37,7 @@ const Card = (props) => {
         hover:bg-gradient-to-r from-yellow-300 to-red-500 hover:text-gray-100"
       >
         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id + 1}.png`} alt=""></img>
+        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${props.id + 1}.png`} alt=""></img>
         {props.name}
       </div>
       {toggleInfo && (
