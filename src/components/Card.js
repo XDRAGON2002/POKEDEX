@@ -8,7 +8,7 @@ const Card = (props) => {
   const [toggleInfo, setToggleInfo] = useState(false)
   const getAbility = async (idx) => {
     setToggleInfo(!toggleInfo)
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idx + 1}`)
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}`)
     setAbilityName(res.data.abilities[0].ability.name)
     const abilityDes = await axios.get(res.data.abilities[0].ability.url)
 
