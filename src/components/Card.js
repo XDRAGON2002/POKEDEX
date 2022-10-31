@@ -7,11 +7,15 @@ const Card = (props) => {
   const [type1, setType1Name] = useState('')
   const [type2, setType2Name] = useState('')
   const [abilityDesc, setAbilityDesc] = useState('')
+  const [species, setSpeciesName] = useState('')
+
   const [toggleInfo, setToggleInfo] = useState(false)
   const getAbility = async (idx) => {
     setToggleInfo(!toggleInfo)
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}`)
+    const res1 = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${idx}`)
     setAbilityName(res.data.abilities[0].ability.name)
+    setSpeciesName(res1.data.genera[7].genus)
     const abilityDes = await axios.get(res.data.abilities[0].ability.url)
 
     abilityDes.data.effect_entries.map((item) => {
@@ -41,6 +45,7 @@ const Card = (props) => {
             <p className="text-sm font-bold">
               {type1 || 'Loading'} {type2}
             </p>
+            <p>{species}</p>
           </div>
           <h1 className="text-lg font-bold">{abilityName || 'Loading'}</h1>
           <p className="text-sm">{abilityDesc || 'Loading'}</p>
