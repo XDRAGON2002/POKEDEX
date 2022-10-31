@@ -4,11 +4,13 @@ import axios from 'axios'
 
 const Card = (props) => {
   const [abilityName, setAbilityName] = useState('')
+  const [type1, setType1Name] = useState('')
+  const [type2, setType2Name] = useState('')
   const [abilityDesc, setAbilityDesc] = useState('')
   const [toggleInfo, setToggleInfo] = useState(false)
   const getAbility = async (idx) => {
     setToggleInfo(!toggleInfo)
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idx + 1}`)
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}`)
     setAbilityName(res.data.abilities[0].ability.name)
     const abilityDes = await axios.get(res.data.abilities[0].ability.url)
 
@@ -18,6 +20,8 @@ const Card = (props) => {
         return
       }
     })
+    setType1Name(res.data.types[0].type.name.toUpperCase())
+    setType2Name(res.data.types[1].type.name.toUpperCase())
   }
   return (
     <div>
@@ -33,6 +37,11 @@ const Card = (props) => {
       </div>
       {toggleInfo && (
         <div className="ml-3 border-4 border-grey-500  absolute flex flex-col items-center w-[220px]  bg-white rounded-lg  p-2">
+          <div>
+            <p className="text-sm font-bold">
+              {type1 || 'Loading'} {type2}
+            </p>
+          </div>
           <h1 className="text-lg font-bold">{abilityName || 'Loading'}</h1>
           <p className="text-sm">{abilityDesc || 'Loading'}</p>
         </div>
